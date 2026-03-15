@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gadgets &amp; Gizmos Geek — Tech Help &amp; Digital Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #2c2c2a;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    :root {
+      --green-dark:  #3B6D11;
+      --green-mid:   #639922;
+      --green-light: #EAF3DE;
+      --green-pale:  #f4f9ee;
+      --gray-text:   #5f5e5a;
+      --gray-light:  #f5f4f0;
+      --border:      rgba(0,0,0,0.10);
+      --radius-md:   8px;
+      --radius-lg:   14px;
+      --max-w:       800px;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 1.4rem;
+    }
+
+    /* Nav */
+    nav {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 14px; color: var(--gray-text); transition: color 0.15s; }
+    .nav-links a:hover { color: #2c2c2a; }
+
+    /* Hero */
+    .hero { padding: 3.5rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lora', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero-text h1 {
+      font-family: 'Lora', serif;
+      font-size: 28px; font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .hero-text p { font-size: 15px; color: var(--gray-text); max-width: 480px; margin-bottom: 1.2rem; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--green-dark); color: #fff;
+      border: none; border-radius: var(--radius-md);
+      padding: 10px 20px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-mid); }
+    .btn-secondary {
+      background: transparent; color: #2c2c2a;
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 10px 20px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: var(--gray-light); }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .service-card { background: var(--green-pale); border-radius: var(--radius-lg); padding: 1.2rem; }
+    .service-icon { font-size: 22px; margin-bottom: 8px; }
+    .service-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .service-card p { font-size: 13px; color: var(--gray-text); line-height: 1.6; }
+    .pricing-note {
+      margin-top: 1.2rem; font-size: 13px; color: var(--gray-text);
+      background: var(--gray-light); border-radius: var(--radius-md);
+      padding: 0.8rem 1rem; border-left: 3px solid var(--green-mid);
+    }
+
+    /* Templates */
+    .etsy-intro { font-size: 14px; color: var(--gray-text); margin-bottom: 1rem; }
+    .templates-row { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 6px; }
+    .template-card {
+      background: var(--gray-light); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); min-width: 150px;
+      flex-shrink: 0; overflow: hidden; transition: transform 0.15s;
+    }
+    .template-card:hover { transform: translateY(-2px); }
+    .template-thumb { height: 90px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .t-green { background: linear-gradient(135deg, #EAF3DE, #C0DD97); }
+    .t-blue  { background: linear-gradient(135deg, #E6F1FB, #B5D4F4); }
+    .t-amber { background: linear-gradient(135deg, #FAEEDA, #FAC775); }
+    .t-pink  { background: linear-gradient(135deg, #FBEAF0, #F4C0D1); }
+    .template-info { padding: 8px 10px 10px; }
+    .template-info p { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .template-info span { font-size: 12px; color: var(--gray-text); }
+    .etsy-link-btn {
+      display: inline-block; margin-top: 1.2rem;
+      background: #f1641e; color: #fff;
+      border-radius: var(--radius-md); padding: 9px 18px;
+      font-size: 14px; font-weight: 500; transition: opacity 0.15s;
+    }
+    .etsy-link-btn:hover { opacity: 0.88; }
+
+    /* Testimonials */
+    .testimonial { background: var(--green-pale); border-radius: var(--radius-lg); padding: 1.4rem; margin-bottom: 12px; }
+    .testimonial blockquote {
+      font-family: 'Lora', serif; font-size: 15px;
+      color: var(--gray-text); font-style: italic;
+      line-height: 1.65; margin-bottom: 10px;
+    }
+    .testimonial cite { font-size: 13px; font-weight: 500; font-style: normal; }
+
+    /* Contact */
+    .contact-box {
+      background: var(--gray-light); border-radius: var(--radius-lg);
+      padding: 1.6rem; display: flex; flex-direction: column; gap: 12px;
+    }
+    .contact-row { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+    .contact-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .contact-row span { color: var(--gray-text); }
+    .contact-row strong { color: #2c2c2a; }
+
+    footer { padding: 1.4rem 1.5rem; text-align: center; font-size: 12px; color: var(--gray-text); }
+
+    @media (max-width: 540px) {
+      .hero-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero-avatar { width: 72px; height: 72px; font-size: 18px; }
+      .hero-text h1 { font-size: 22px; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════
+       NAVIGATION
+  ═══════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Gadgets &amp; Gizmos Geek</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#shop">Templates</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════
+       HERO
+       SWAP: tagline, pitch text
+       SWAP: replace avatar div with a real photo once you have one:
+         <img src="images/headshot.jpg" alt="Your name"
+              style="width:96px;height:96px;border-radius:50%;object-fit:cover;">
+  ═══════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar">G&amp;G</div>
+      <div class="hero-text">
+        <span class="hero-tag">Fountain, Colorado</span>
+        <h1>Tech help that actually makes sense</h1>
+        <p>
+          I come to you, simplify your phone or computer, and make sure you feel
+          confident using it every day. No jargon, no judgment &mdash; just clear,
+          friendly help.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact"><button class="btn-primary">Book a visit</button></a>
+          <a href="#shop"><button class="btn-secondary">Browse templates &rarr;</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       SERVICES
+       SWAP: add/remove service cards as needed
+       SWAP: update pricing in the note below
+  ═══════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-label">What I can help with</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Phone setup</h3>
+          <p>Clean up apps, organize your home screen, and fix settings that are driving you crazy.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Computer help</h3>
+          <p>Speed it up, clear the clutter, and make it easier to find what you need.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📧</div>
+          <h3>Email &amp; apps</h3>
+          <p>Set up email, manage photos, or get comfortable with any app that's giving you trouble.</p>
+        </div>
+      </div>
+      <!-- SWAP: replace $XX with your real rates -->
+      <p class="pricing-note">
+        <strong>Home visits start at $XX</strong> for the first hour, $XX each additional 30 minutes.
+        Serving Fountain, Colorado Springs, and surrounding areas.
+        <a href="#contact" style="color: var(--green-dark); font-weight: 500;">Get in touch to schedule &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       ETSY / TEMPLATES
+       SWAP: update each template card with your real listing name, price,
+             and optionally wrap each card in an <a href="YOUR_LISTING_URL">
+       SWAP: update the Etsy button link to your real shop URL
+  ═══════════════════════════ -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section-label">Digital templates &mdash; Etsy shop</div>
+      <p class="etsy-intro">Downloadable templates and themes you can use right away &mdash; planners, trackers, resumes, and more.</p>
+      <div class="templates-row">
+        <div class="template-card">
+          <div class="template-thumb t-green">🌿</div>
+          <div class="template-info"><p>Nature planner</p><span>from $4.99</span></div>
+        </div>
+        <div class="template-card">
+          <div class="template-thumb t-blue">✦</div>
+          <div class="template-info"><p>Minimal resume</p><span>from $3.99</span></div>
+        </div>
+        <div class="template-card">
+          <div class="template-thumb t-amber">📋</div>
+          <div class="template-info"><p>Budget tracker</p><span>from $2.99</span></div>
+        </div>
+        <div class="template-card">
+          <div class="template-thumb t-pink">🌸</div>
+          <div class="template-info"><p>Weekly journal</p><span>from $3.49</span></div>
+        </div>
+      </div>
+      <!-- SWAP: update href to your real Etsy shop URL -->
+      <a href="https://www.etsy.com/shop/GadgetsandGizmosGeek" target="_blank" class="etsy-link-btn">
+        Visit my Etsy shop &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       TESTIMONIALS
+       SWAP: replace placeholder with a real quote once you have one
+       Add more <div class="testimonial"> blocks as you collect reviews
+  ═══════════════════════════ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-label">What people are saying</div>
+      <div class="testimonial">
+        <blockquote>
+          "I couldn't figure out where anything was on my new phone. After one visit, it all made sense.
+          I finally feel like I can use it myself."
+        </blockquote>
+        <cite>&mdash; Margaret T., Colorado Springs</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       CONTACT
+       SWAP: your real phone number, email, and service area
+  ═══════════════════════════ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label">Get in touch</div>
+      <div class="contact-box">
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <!-- SWAP: your real phone number -->
+          <span>Phone: <strong><a href="tel:+17195550100">(719) 555-0100</a></strong></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <!-- SWAP: your real email address -->
+          <span>Email: <strong><a href="mailto:hello@gadgetsandgizmosgeek.com">hello@gadgetsandgizmosgeek.com</a></strong></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <!-- SWAP: your service area if different -->
+          <span>Serving: <strong>Fountain, Colorado Springs &amp; surrounding areas</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Gadgets &amp; Gizmos Geek &middot; Made with care in Fountain, CO
+  </footer>
+
+</body>
+</html>
